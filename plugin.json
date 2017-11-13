@@ -1,0 +1,30 @@
+{
+  "name"              : "FacebookPixel",
+  "namespace"         : "FacebookPixel",
+  "type"              : "template",
+  "version"           : "1.0.0",
+  "license"           : "AGPL-3.0",
+  "price"             : 0.00,
+  "description"       : "Provides Facebook Pixel integration for plentymarkets webshops",
+  "shortDescription"  : {"de": "Facebook Pixel Integration für plentymarkets Webshops","en": "Provides Facebook Pixel integration for plentymarkets webshops"},
+  "categories"        : ["3527"],
+  "author"            : "plentymarkets GmbH",
+  "authorIcon"        : "icon_author_xs.png",
+  "pluginIcon"        : "icon_plugin_xs.png",
+  "email"             : "sales@plentymarkets.com",
+  "phone"             : "+49 561 98 681 100",
+  "keywords"          : ["plentymarkets", "plugins", "layout", "template", "facebook", "pixel", "tracking"],
+  "require"           : ["IO"],
+  "serviceProvider"   : "FacebookPixel\\Providers\\FacebookPixelServiceProvider",
+  "javaScriptFiles"   : [],
+  "containers"        : [],
+  "dataProviders": [
+    {
+      "key"           :"FacebookPixel\\Providers\\FacebookPixelCodeProvider",
+      "name"          :"Facebook Pixel code",
+      "description"   :"Include Facebook Pixel code snippet"
+    }
+  ],
+  "dependencies"      : [],
+  "runOnBuild"        : []
+}

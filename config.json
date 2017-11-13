@@ -1,0 +1,9 @@
+[
+  {
+    "tab"       : "Settings",
+    "key"       : "pixelId",
+    "label"     : "Facebook Pixel-ID",
+    "type"      : "text",
+    "default"   : ""
+  }
+]
