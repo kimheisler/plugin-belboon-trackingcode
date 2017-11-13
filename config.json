@@ -2,7 +2,7 @@
   {
     "tab"       : "Settings",
     "key"       : "pixelId",
-    "label"     : "Facebook Pixel-ID",
+    "label"     : "Facebook Pixel ID",
     "type"      : "text",
     "default"   : ""
   }
