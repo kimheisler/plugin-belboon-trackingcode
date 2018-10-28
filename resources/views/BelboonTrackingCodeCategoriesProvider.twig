@@ -1,7 +1,9 @@
-{% if services.template.getCurrentTemplate() == 'tpl.category.item' %}<!-- Belboon Categories Code -->
+{% if services.template.getCurrentTemplate() == 'tpl.category.item' %}
+
+<!-- Belboon Categories Code -->
 <script type="text/javascript">
     belboonTag = {
-        categoryId: "[{{ category.id }}]"
+        categoryId: "{{ category.id }}"
     };
 </script>
 <script type="text/javascript">

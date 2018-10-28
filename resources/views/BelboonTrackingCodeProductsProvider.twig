@@ -1,0 +1,26 @@
+{% if services.template.getCurrentTemplate() == 'tpl.item' %}
+
+<!-- Belboon Products Code -->
+<script type="text/javascript">
+    belboonTag = {
+        "productBrand": "{{ item.documents[0].data.item.manufacturer.externalName }}",
+        "categoryId": "18",
+        "products": [
+            {
+                "id": "{{ item.documents[0].data.variation.id }}",
+                "price": "{{ item.documents[0].data.prices.default.price.value }}"
+            }
+        ]
+    };
+</script>
+<script type="text/javascript">
+    (function(d) {
+        var s = d.createElement("script");
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//containertags.belboon.de/belboonTag.js.php?pId={{ belboonProgramId }}&page=product&type=dynamic";
+        var a = d.getElementsByTagName("script")[0];
+        a.parentNode.insertBefore(s, a);
+    }(document));
+</script>
+<!-- End Belboon Products Code -->
+{% endif %}

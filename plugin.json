@@ -27,8 +27,13 @@
     },
     {
       "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeCategoriesProvider",
-      "name"          :"Belboon Tracking-Code Categories",
+      "name"          :"Belboon Tracking-Code Kategorien",
       "description"   :"Include the Belboon Categories-Tracking-Code snippet."
+    },
+    {
+      "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeProductsProvider",
+      "name"          :"Belboon Tracking-Code Produktseite",
+      "description"   :"Include the Belboon Products-Tracking-Code snippet."
     }
   ],
   "dependencies"      : [],
