@@ -1,15 +1,15 @@
 <?php
 
-namespace FacebookPixel\Providers;
+namespace BelboonTrackingCode\Providers;
 
 use Plenty\Plugin\ServiceProvider;
 use Plenty\Plugin\Templates\Twig;
 
 /**
- * Class FacebookPixelServiceProvider
- * @package FacebookPixel\Providers
+ * Class BelboonTrackingCodeServiceProvider
+ * @package BelboonTrackingCode\Providers
  */
-class FacebookPixelServiceProvider extends ServiceProvider
+class BelboonTrackingCodeServiceProvider extends ServiceProvider
 {
     /**
      * Register the core functions

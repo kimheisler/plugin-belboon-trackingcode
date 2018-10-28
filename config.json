@@ -1,8 +1,8 @@
 [
   {
-    "tab"       : "Settings",
-    "key"       : "pixelId",
-    "label"     : "Facebook Pixel ID",
+    "tab"       : "Einstellungen",
+    "key"       : "belboonProgramId",
+    "label"     : "Belboon Programm ID",
     "type"      : "text",
     "default"   : ""
   }

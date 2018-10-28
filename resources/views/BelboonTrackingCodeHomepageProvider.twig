@@ -1,0 +1,16 @@
+{% if services.template.getCurrentTemplate() == 'tpl.home' %}
+<!-- Belboon Homepage Code -->
+<script type="text/javascript">
+    belboonTag = {};
+</script>
+<script type="text/javascript">
+(function(d) {
+    var s = d.createElement("script");
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//containertags.belboon.de/belboonTag.js.php?pId={{ belboonProgramId }}&page=start&type=dynamic";
+    var a = d.getElementsByTagName("script")[0];
+    a.parentNode.insertBefore(s, a);
+}(document));
+</script>
+<!-- End Belboon Homepage Code -->
+{% endif %}
