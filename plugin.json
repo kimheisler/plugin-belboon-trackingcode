@@ -24,6 +24,11 @@
       "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeHomepageProvider",
       "name"          :"Belboon Tracking-Code Homepage",
       "description"   :"Include the Belboon Homepage-Tracking-Code snippet."
+    },
+    {
+      "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeCategoriesProvider",
+      "name"          :"Belboon Tracking-Code Categories",
+      "description"   :"Include the Belboon Categories-Tracking-Code snippet."
     }
   ],
   "dependencies"      : [],
