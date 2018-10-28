@@ -1,0 +1,28 @@
+{% if services.template.getCurrentTemplate() == 'tpl.basket' %}
+
+<!-- Belboon Basket Code -->
+<script type="text/javascript">
+    belboonTag = {
+        "productBrand": "[value]",
+        "orderProducts": [
+{% for basketItem in basketItems %}      
+          {
+              'id': '{{ basketItem.variation.number }}',
+              'price': '{{ unitPrice }}',
+              'qty': '{{ basketItem.quantity }}'
+          }{% if not loop.last %},{% endif %}      
+{% endfor %}            
+        ]
+    };
+</script>
+<script type="text/javascript">
+    (function(d) {
+        var s = d.createElement("script");
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//containertags.belboon.de/belboonTag.js.php?pId={{ belboonProgramId }}&page=basket&type=dynamic";
+        var a = d.getElementsByTagName("script")[0];
+        a.parentNode.insertBefore(s, a);
+    }(document));
+</script>
+<!-- End Belboon Basket Code -->
+{% endif %}
