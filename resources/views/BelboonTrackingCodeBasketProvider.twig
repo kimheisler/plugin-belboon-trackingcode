@@ -1,17 +1,16 @@
 {% if services.template.getCurrentTemplate() == 'tpl.basket' %}
 {% set basketItems = services.basket.getBasketItems() %}
+
 <!-- Belboon Basket Code -->
 <script type="text/javascript">
     belboonTag = {
-        "productBrand": "[value]",
-        "orderProducts": [
-{% for basketItem in basketItems %}   
+        "productBrand": "",
+        "orderProducts": [{% for basketItem in basketItems %}   
           {
-              'id': '{{ basketItem.variationId }}',
-              'price': '{{ basketItem.price }}',
-              'qty': '{{ basketItem.quantity }}'
-          }{% if not loop.last %},{% endif %}      
-{% endfor %}            
+            'id': '{{ basketItem.variationId }}',
+            'price': '{{ basketItem.price|number_format(2) }}',
+            'qty': '{{ basketItem.quantity }}'
+          }{% if not loop.last %},{% endif %}{% endfor %}
         ]
     };
 </script>
