@@ -1,6 +1,6 @@
 {% if services.template.getCurrentTemplate() == 'tpl.basket' %}
 {% set basketItems = services.basket.getBasketItems() %}
-{{ basketItems | json_encode }}
+
 <!-- Belboon Basket Code -->
 <script type="text/javascript">
     belboonTag = {
