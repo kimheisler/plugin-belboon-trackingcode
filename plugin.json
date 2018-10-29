@@ -39,6 +39,11 @@
       "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeBasketProvider",
       "name"          :"Belboon Tracking-Code Warenkorb",
       "description"   :"Include the Belboon Basket-Tracking-Code snippet."
+    },
+    {
+      "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeOrderConfirmationProvider",
+      "name"          :"Belboon Tracking-Code Bestellbestätiung",
+      "description"   :"Include the Belboon Order-Confirmation-Tracking-Code snippet."
     }
   ],
   "dependencies"      : [],

@@ -5,11 +5,11 @@ namespace BelboonTrackingCode\Providers;
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Templates\Twig;
 
-class BelboonTrackingCodeBasketProvider
+class BelboonTrackingCodeOrderConfirmationProvider
 {
     public function call( Twig $twig, ConfigRepository $configRepository )
     {
-        return $twig->render('BelboonTrackingCode::BelboonTrackingCodeBasketProvider', [
+        return $twig->render('BelboonTrackingCode::BelboonTrackingCodeOrderConfirmationProvider', [
             'belboonProgramId' => $configRepository->get('BelboonTrackingCode.belboonProgramId')
         ]);
     }
