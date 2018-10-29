@@ -1,15 +1,15 @@
 {% if services.template.getCurrentTemplate() == 'tpl.confirmation' %}
-{{ data.order.orderItems | json_encode}}
+
 <!-- Belboon Confirmation Code -->
 <script type="text/javascript">
     belboonTag = {
         "orderId": "{{ data.order.id }}]",
-        "orderProducts": [{% for item in data.order.orderItems %}
+        "orderProducts": [{% for item in data.order.orderItems %}{% if item.typeId == 1 %}
             {
               'id': '{{ item.itemVariationId }}',
               'price': '{{ item.amounts[0].priceGross|number_format(2) }}',
               'qty': '{{ item.quantity }}'
-            }{% if not loop.last %},{% endif %}{% endfor %}
+            }{% if not loop.last %},{% endif %}{% endif %}{% endfor %}
 
         ],
         "orderTransactionAmount": "{{ data.order.amounts[0].grossTotal }}"
