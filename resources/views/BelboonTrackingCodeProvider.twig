@@ -1,0 +1,26 @@
+{% if services.template.getCurrentTemplate() == 'tpl.confirmation' %}
+
+{% set nettowarenwertOriginal = 0 %}
+{% set nettowarenwertAlternativ = 0 %}
+{% set alternativMerchantNames = ["Agfa","AGFAPHOTO","Geha","Jettec","KMP","Peach","Pelikan","Premium","PatronenProfi"] %}
+
+{% for item in data.order.orderItems %}
+  {% if item.typeId == 1 %}
+    {% set nameArray = item.orderItemName|split(' ', 2) %}
+    {% if attribute(nameArray, 0) in alternativMerchantNames|keys %}
+      {% set nettowarenwertAlternativ = nettowarenwertAlternativ + item.amounts[0].priceNet|number_format(2) %}
+    {% else %}
+      {% set nettowarenwertOriginal = nettowarenwertOriginal + item.amounts[0].priceNet|number_format(2) %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if nettowarenwertAlternativ > 0 %}
+<img src="https://www1.belboon.de/adtracking/sale/{{ "%09d"|format(belboonProgramId) }}.gif/oc={{ data.order.id }}&sale={{ nettowarenwertAlternativ }}&belboon=xxxx,yyyy" border="0" width="1" height="1" alt="" id="bbconv"/><script src="https://www1.belboon.de/adtracking/conversion.jssl"></script>
+{% endif %}
+
+{% if nettowarenwertOriginal > 0 %}
+<img src="https://www1.belboon.de/adtracking/sale/{{ "%09d"|format(belboonProgramId) }}.gif/oc={{ data.order.id }}&original={{ nettowarenwertOriginal }}&belboon=xxxx,yyyy" border="0" width="1" height="1" alt="" id="bbconv"/><script src="https://www1.belboon.de/adtracking/conversion.jssl"></script>
+{% endif %}
+
+{% endif %}

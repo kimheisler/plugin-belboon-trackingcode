@@ -21,6 +21,11 @@
   "containers"        : [],
   "dataProviders": [
     {
+      "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeProvider",
+      "name"          :"Belboon Conversion Tracking-Code",
+      "description"   :"Include the Belboon Tracking-Code snippet."
+    },
+    {
       "key"           :"BelboonTrackingCode\\Providers\\BelboonTrackingCodeHomepageProvider",
       "name"          :"Belboon Tracking-Code Homepage",
       "description"   :"Include the Belboon Homepage-Tracking-Code snippet."
