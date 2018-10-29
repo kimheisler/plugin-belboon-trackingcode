@@ -1,0 +1,28 @@
+{% if services.template.getCurrentTemplate() == 'tpl.confirmation' %}
+{{ data.order.orderItems | json_encode}}
+<!-- Belboon Confirmation Code -->
+<script type="text/javascript">
+    belboonTag = {
+        "orderId": "{{ data.order.id }}]",
+        "orderProducts": [{% for item in data.order.orderItems %}
+            {
+              'id': '{{ item.itemVariationId }}',
+              'price': '{{ item.amounts[0].priceGross|number_format(2) }}',
+              'qty': '{{ item.quantity }}'
+            }{% if not loop.last %},{% endif %}{% endfor %}
+
+        ],
+        "orderTransactionAmount": "{{ data.order.amounts[0].grossTotal }}"
+    };
+</script>
+<script type="text/javascript">
+    (function(d) {
+        var s = d.createElement("script");
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//containertags.belboon.de/belboonTag.js.php?pId={{ belboonProgramId }}&page=checkout&type=dynamic";
+        var a = d.getElementsByTagName("script")[0];
+        a.parentNode.insertBefore(s, a);
+    }(document));
+</script>
+<!-- End Belboon Confirmation Code -->
+{% endif %}
